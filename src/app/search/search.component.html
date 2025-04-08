@@ -1,0 +1,26 @@
+<div class="custom-search" [class.dark]="isDarkMode" [class.dark-mode]="isDarkMode">
+  <strong class="fs-1 my-4 font-monospace"><i class="fa fa-search"></i> Search</strong>
+  <div class="container align-items-center flex-column d-flex">
+    <input class="my-4" type="text" [ngModel]="query" (ngModelChange)="onSearchInput($event)"
+      (keydown)="onKeyDown($event)" placeholder="Type to search..." />
+
+
+
+    <ul *ngIf="suggestions.length" class="text-start">
+      <li class="ps-4" *ngFor="let suggestion of suggestions; let i = index" (click)="selectSuggestion(suggestion)"
+        [class.highlighted]="i === highlightedIndex">
+        {{ suggestion }}
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="buttons">
+    <button class="btn btn-outline-primary px-5 mx-2"  (click)="redirectToSearch(query,1)"><i class="fa-brands fa-wikipedia-w"></i> wiki  Search</button>
+    <button class="btn btn-outline-primary px-2"  (click)="redirectToSearch(query,2)"><i class="fa-brands fa-google"></i> Google  Search</button>
+  </div>
+
+  <button class="btn btn-secondary px-2 btn-sm" class="mode-toggle" (click)="toggleDarkMode()">
+    {{ isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode' }}
+  </button>
+</div>

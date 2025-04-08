@@ -1,0 +1,19 @@
+body{
+    /* max-width: 500px; */
+    /* margin: 80px auto;
+  
+    padding: 30px; */
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1e1e2f, #2d2d3d);
+    color: #fff;
+    text-align: center;
+    /* box-shadow: 0 0 40px rgba(0, 0, 0, 0.6); */
+    transition: all 0.4s ease;
+    height: 100vh !important;
+  }
+  
+  .custom-search h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
